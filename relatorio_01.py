@@ -25,7 +25,6 @@ class Aula:
         presenca = f"Presenca na aula sobre {self.assunto}, ministrada pelo professor {self.professor.nome}: \n"
         for aluno in self.alunos:
             presenca += aluno.presenca() + "\n"
-
         return presenca
 
 professor = Professor("Lucas")
