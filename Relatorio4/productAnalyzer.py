@@ -28,7 +28,7 @@ class ProductAnalyzer:
     def clienteQueMaisGastou(self):
         self.dados = self.db.collection.aggregate([
             {"$unwind": "$produtos"},
-            {"$group": {"_id": "$_id", "preco_total":{"$sum": "$produtos.preco"}}},
+            {"$group": {"_id": "$_id", "cliente": {"$first": "$cliente_id"}, "preco_total": {"$sum": {"$multiply": ["$produtos.quantidade", "$produtos.preco"]}}}},
             {"$sort": {"preco_total": -1}},
             {"$limit": 1}
         ])
