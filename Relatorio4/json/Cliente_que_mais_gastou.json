@@ -1,8 +1,9 @@
 [
     {
         "_id":{
-            "$oid":"66d659f1dc3254569649d12c"
+            "$oid":"66d659f1dc3254569649d12e"
         },
-        "preco_total":46.03
+        "cliente":6,
+        "preco_total":71.95
     }
 ]
