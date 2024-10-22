@@ -3,7 +3,7 @@ class GameDatabase:
     def __init__(self, database):
         self.db = database
 
-    def create_player(self, name):
+    def create_player(self, name, old, points):
         query = "CREATE (:Jogador {name: $name, old: $old, points: $points})"
         parameters = {"name": name, "old": old, "points": points}
         self.db.execute_query(query, parameters)
